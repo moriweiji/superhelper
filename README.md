@@ -63,8 +63,9 @@ superhelper/
 
 1. **克隆项目**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/moriweiji/superhelper
    cd superhelper
+   将`.claude/commands/superh.md`文件复制到`~/.claude/commands/`目录下或者你项目的`.claude/commands/`目录下
    ```
 
 2. **配置MCP工具**（重要）
