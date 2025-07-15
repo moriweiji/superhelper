@@ -1,0 +1,45 @@
+# Claude Code 配置文件
+.claude/settings.local.json
+.claude/settings.json
+
+# 临时文件
+*.tmp
+*.temp
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+logs/
+
+# 备份文件
+*.bak
+*.backup
+
+# 个人笔记和草稿
+notes/
+drafts/
+personal/
+
+# 开发环境配置
+.vscode/settings.json
+.idea/
+
+# 缓存文件
+.cache/
+cache/
+
+# 知识库下载临时文件
+.claude/knowledge/temp/
+download_temp/
+docs
+
+# 测试文件
+test_*.md
+*_test.md
+
+# 本地配置覆盖
+local_config.*

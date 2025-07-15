@@ -107,7 +107,7 @@
 ### 开发环境
 ```bash
 # 在superhelper项目目录
-cd /home/moriweiji/github/superhelper
+
 # 直接编辑superh.md测试
 ```
 

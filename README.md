@@ -70,6 +70,10 @@ superhelper/
 
 2. **配置MCP工具**（重要）
    确保已安装deepwiki MCP工具，这是SuperHelper的核心依赖
+   # 添加sequential-thinking
+    claude mcp add --scope user sequential-thinking npx @modelcontextprotocol/server-sequential-thinking
+   # deepwiki
+    claude mcp add --transport sse --scope user deepwiki https://mcp.deepwiki.com/sse
 
 3. **开始使用**
    ```bash
@@ -80,7 +84,7 @@ superhelper/
    ```
 
 4. **注意事项**
-   - 使用了`/superh`命令后，获取到的推荐命令后，要么使用/clear，要么重新开启新的终端，由于上下文的存在，会污染命令执行的效果，严重的会导致进入到superh的死循环中。
+   - 使用了`/superh`命令，获取到的推荐命令后，要么使用/clear，要么重新开启新的终端，由于上下文的存在，会污染命令执行的效果，严重的会导致进入到superh的死循环中。
 
 
 ## 💡 使用示例
