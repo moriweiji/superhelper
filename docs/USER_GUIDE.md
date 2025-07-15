@@ -2,7 +2,9 @@
 
 ## 5秒上手
 
-SuperHelper基于专家级咨询机制，帮你获得准确的SuperClaude命令推荐。
+**SuperHelper是SuperClaude的外挂工具**，专门分析用户需求并推荐合适的SuperClaude命令组合，不执行任何具体任务。
+
+基于5阶段智能优化流程和专家知识库，提供准确的SuperClaude命令推荐。
 
 ### 系统要求
 
@@ -14,6 +16,14 @@ SuperHelper基于专家级咨询机制，帮你获得准确的SuperClaude命令�
 **可选工具**：
 - sequential-thinking MCP工具（需求分析）
 - graphiti-memory MCP工具（用户偏好记忆）
+
+### 5阶段智能工作流程
+
+1. **📥 需求输入** → 在Claude Code中使用 `@superh "需求描述"`
+2. **🧠 需求优化** → AI思维链处理，模糊需求转专业需求
+3. **🔍 专家查询** → deepwiki查询SuperClaude专家知识库
+4. **✅ 质量确认** → 验证命令准确性、参数合理性
+5. **📋 格式化输出** → 提供完整命令、解释和后续建议
 
 ### 安装
 

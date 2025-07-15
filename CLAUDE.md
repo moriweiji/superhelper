@@ -11,44 +11,59 @@ SuperClaude项目地址:https://github.com/NomenAK/SuperClaude.git
 
 ```
 superhelper/
-├── .claude/
-│   ├── settings.local.json         # Claude Code配置文件
-│   ├── commands/
-│   │   └── superh.md              # 核心命令定义文件
-│   └── knowledge/                 # SuperClaude知识库
-│       ├── README.md
-│       ├── COMMANDS.md
-│       ├── CLAUDE.md
-│       ├── superclaude-*.yml      # 各种配置文件
-│       └── *.md                   # 其他知识文档
+├── README.md                      # 项目主要说明文档
 ├── docs/
-│   ├── ARCHITECTURE.md            # 架构说明
-│   ├── PLAN.md                    # 开发计划
-│   └── USER_GUIDE.md              # 使用指南
-├── backup/                        # 备份文件
-├── download_knowledge.sh          # 知识库下载脚本
-└── CLAUDE.md                      # 本文件
+│   ├── ARCHITECTURE.md            # 架构说明（5阶段流程图）
+│   ├── USER_GUIDE.md              # 使用指南
+│   └── PLAN.md                    # 开发计划
+├── backup/
+│   └── superh.md                  # 核心命令推荐逻辑（5阶段智能流程）
+└── CLAUDE.md                      # 项目内部说明文档
 ```
 
-## 核心架构（极简版 v2.0）
+**架构简化说明**：
+- ✅ **极简架构**：专注核心功能，移除不必要的目录
+- ✅ **核心依赖**：仅依赖superh.md + deepwiki专家知识库
+- ✅ **零冗余**：去除本地知识库维护机制
+- ✅ **外挂本质**：SuperHelper作为SuperClaude的增强命令
+
+## 核心架构（标准5阶段流程）
+
+### 5阶段智能优化流程
+```mermaid
+graph TD
+    A["👤 用户输入<br/>/superh '用户需求'"] --> B["🧠 需求优化阶段<br/>mcp__sequential-thinking__sequentialthinking"]
+    
+    B --> B1["📝 输入: 原始需求"]
+    B1 --> B2["🔄 AI思维链处理"]
+    B2 --> B3["✨ 输出: 优化后需求"]
+    
+    B3 --> C["🔍 专家查询阶段<br/>mcp__deepwiki__ask_question"]
+    
+    C --> C1["📋 查询参数设置<br/>• repoName: NomenAK/SuperClaude<br/>• question: 优化需求 + 执行方案"]
+    C1 --> C2["🌐 向专家知识库查询"]
+    C2 --> C3["📊 获得专家推荐结果"]
+    
+    C3 --> D{"✅ 质量确认<br/>结果是否满意？"}
+    
+    D -->|❌ 不满意| C
+    D -->|✅ 满意| E["🎯 最终输出阶段"]
+    
+    E --> E1["📝 格式化结果"]
+    E1 --> F["🚀 用户获得专业方案"]
+```
 
 ### 主要组件
-- **superh.md**: 核心命令推荐逻辑，实现deepwiki专家咨询 + 质量审核机制
+- **superh.md**: 核心命令推荐逻辑，实现5阶段智能优化流程
 - **deepwiki MCP工具**: SuperClaude专家顾问，提供最新命令信息和推荐
 - **sequential-thinking**: 智能需求分析和优化引擎
-
-
-### 极简工作流程
-```
-用户需求 → 直接问deepwiki推荐 → 质量审核 → 不满意就再问 → 输出准确推荐
-                                   ↓
-                        deepwiki不可用 → 告诉用户安装deepwiki
-```
+- **质量审核机制**: 确保推荐准确性
 
 **角色分工清晰**：
 - **deepwiki**: SuperClaude专家顾问（主要工作者）
 - **SuperHelper**: 质量审核员 + 用户体验优化师（质量把关）
-- **用户**: 要么得到准确答案，要么明确知道系统限制
+- **SuperClaude**: 实际执行推荐的命令（SuperHelper不执行任务）
+- **用户**: 获得准确命令或明确系统限制
 
 ### 核心功能
 - **专家级推荐**: 基于deepwiki的SuperClaude专业知识
@@ -60,14 +75,15 @@ superhelper/
 ## 开发和维护
 
 ### 工具配置
-- 项目使用Claude Code设置文件 `.claude/settings.local.json`
-- 允许的工具：
-  - Bash操作：`find`、`ls`、`mkdir`、`mv`、`rm`、`chmod`、`cp`等
-  - MCP工具：`deepwiki`、`sequential-thinking`
-  - WebFetch限制：仅允许github.com相关域名
+- 项目使用标准Claude Code配置
+- 核心工具依赖：
+  - **deepwiki MCP工具**: SuperClaude专家顾问，提供最新命令信息
+  - **sequential-thinking**: 智能需求分析和优化引擎
+  - **graphiti-memory**: 可选，用于记忆用户偏好
+- WebFetch限制：仅允许github.com相关域名
 
 ### 文档维护
-- **superh.md**: 包含核心推荐逻辑，基于deepwiki专家咨询机制
+- **superh.md**: 位于backup目录，包含核心推荐逻辑，基于deepwiki专家咨询机制
 - **深度依赖deepwiki**: 确保推荐基于最新SuperClaude项目信息
 - **质量审核标准**: 维护命令有效性、推荐完整性、用户体验标准
 - **错误处理机制**: 完善的deepwiki不可用时的用户指导
