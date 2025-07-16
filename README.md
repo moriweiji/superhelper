@@ -83,6 +83,8 @@ superhelper/
    /superh "项目分析"
    /superh "构建全栈应用"
    /superh "优化代码性能"
+   
+   # 技术说明：参数通过$ARGUMENTS占位符传递给命令文件
    ```
 
 4. **注意事项**
