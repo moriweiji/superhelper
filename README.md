@@ -1,8 +1,7 @@
 # SuperHelper - SuperClaude命令智能推荐器
 
 > 🚀 **一个专业的SuperClaude命令推荐引擎，基于deepwiki专家咨询机制，为用户提供精准的命令建议**
->
-> **🎯 当前版本**: SuperHelper v2.0 - 极简架构，专注核心功能
+> 已经兼容最SuperClaude V3.0版本
 
 
 ## 📖 项目简介
@@ -10,9 +9,7 @@
 SuperHelper是一个为[SuperClaude](https://github.com/NomenAK/SuperClaude)用户设计的智能命令推荐器。它通过deepwiki专家咨询机制，分析用户需求并推荐最合适的SuperClaude命令组合，而不执行具体任务。
 
 
-### 注意事项
 
-由于SuperClaude正在更新V3.0版本，经过测试好像安装有问题。所以暂时使用V2.0版本。
 
 ### 🎯 核心价值
 
